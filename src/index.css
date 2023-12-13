@@ -1,0 +1,33 @@
+body {
+  font-family: Georgia, serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+}
+
+#logo-image {
+  width: 30px;
+  margin-right: 10px;
+}
+
+/* Add your own custom styles here */
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  background-color: lightgreen;
+}
+
+nav span{
+  display: flex;
+  justify-content: space-around;
+}
+
+nav a{
+  padding: 1rem;
+}
+
+.registerForm {
+  display: flex;
+  flex-wrap: wrap;
+}
