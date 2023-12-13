@@ -1,6 +1,8 @@
+import './Homepage.css'
+
 const Homepage = () => {
     return(
-        <div>
+        <div className="homePageDiv">
             
             <h2>Welcome to our library!</h2>
 

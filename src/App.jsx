@@ -9,16 +9,16 @@ import Register from './components/Register'
 import Account from './components/Account'
 import SuccessRegi from './components/SuccessRegi'
 import Homepage from './components/Homepage'
+import SelectedBook from './components/SelectedBook'
 
 function App() {
   const [token, setToken] = useState(null)
   const [user, setUser] = useState({})
-
+  const [bookList,setBookList]=useState([])
 
   useEffect(() => {
     const attemptLogin = async() => {
-      const loggedInToken = window.localStorage.getItem('token')
-      
+      const loggedInToken = window.localStorage.getItem('token')      
 
       if(loggedInToken){
         const response = await axios.get('https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/me', {
@@ -27,18 +27,38 @@ function App() {
             'Authorization': `Bearer ${loggedInToken}`
           }
         })
-
+        console.log("attemptLogin response  ",attemptLogin);
         setUser(response.data)
-      }else{
-        
+      }else{        
         throw 'no token'
       }
-
     }
     
     attemptLogin()
   },[token])
 
+    //call api to get book list
+  useEffect(() => {
+  const fetchBookList = async () => {
+    const loggedInToken = window.localStorage.getItem("token");
+    if (loggedInToken) {
+      const {data} = await axios.get(
+        "https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books",
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${loggedInToken}`,
+          },
+        }
+      );
+      console.log("fetchBookList response  ", data.books);
+      setBookList(data.books);
+    } else {
+      throw "no token";
+    }
+  }
+  fetchBookList();
+}, [token]);
  
   return (
     <>
@@ -47,7 +67,8 @@ function App() {
     <Routes>
       <Route path='/' element={<Homepage/>}/>
       <Route path='/successReg' element={<SuccessRegi />}/>
-      <Route path='/books' element={<Books />}/>
+      <Route path='/books' element={<Books bookList={bookList} />}/>
+      <Route path='/books/:id' element={<SelectedBook bookList={bookList}/>}/>
       <Route path='/login' element={<Login setUser={setUser} setToken={setToken}/>}/>
       <Route path='/register' element={<Register />}/>
       <Route path='/account' element={<Account user={user} setUser={setUser} setToken={setToken}/>}/>

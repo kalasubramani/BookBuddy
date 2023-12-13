@@ -1,0 +1,20 @@
+.selectedBookDiv{
+  width:50%;
+  height:25em;
+  margin:auto;
+  overflow-y: auto;
+  background-color: lightseagreen;
+}
+.bold{
+  font-weight: bold;
+}
+.coverImage {
+  height: 200px;
+  width: auto;
+  float: inline-end;
+  margin: 10px;
+}
+.bookDetails{
+  border: 1px solid red;
+  height:18em;
+}

@@ -11,18 +11,20 @@ const Login = ({setToken}) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-
+        console.log("login page submit");
         const user = {
             email,
             password
         }
-        try {
-            
+        try {            
             const {data} = await axios.post('https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/login', user)
+            // const response = await axios.post('https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/login', user)
             window.localStorage.setItem('token', data.token);
+            // console.log("login response ",response)
             setToken(data.token)
             navigate('/')
         } catch (error) {
+          console.log("login error ",error)
             setError(error.response.data.message)
         }
     }
@@ -33,17 +35,19 @@ const Login = ({setToken}) => {
                 <label>
                     Email:
                     <input 
-                        type="text"
+                        type="email"
                         value = {email}
                         onChange={(e) => {setEmail(e.target.value)}}
+                        required
                     />
                 </label>
                 <label>
                     Password:
                     <input 
-                        type="text"
+                        type="password"
                         value={password}
                         onChange={(e) => {setPassword(e.target.value)}}
+                        required
                     />
                 </label>
                 <button type="submit">Login</button>
