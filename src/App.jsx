@@ -10,6 +10,8 @@ import Account from './components/Account'
 import SuccessRegi from './components/SuccessRegi'
 import Homepage from './components/Homepage'
 import SelectedBook from './components/SelectedBook'
+import './App.css'
+import About from './components/About'
 
 function App() {
   const [token, setToken] = useState(null)
@@ -63,7 +65,7 @@ function App() {
   return (
     <>
     <h1><img id='logo-image' src={bookLogo}/><Link to='/'>Library App</Link></h1>
-    <Navigations user={user}/>
+    <Navigations user={user} setUser={setUser} setToken={setToken} />
     <Routes>
       <Route path='/' element={<Homepage/>}/>
       <Route path='/successReg' element={<SuccessRegi />}/>
@@ -71,7 +73,8 @@ function App() {
       <Route path='/books/:id' element={<SelectedBook bookList={bookList}/>}/>
       <Route path='/login' element={<Login setUser={setUser} setToken={setToken}/>}/>
       <Route path='/register' element={<Register />}/>
-      <Route path='/account' element={<Account user={user} setUser={setUser} setToken={setToken}/>}/>
+      <Route path='/account' element={<Account user={user} />}/>
+      <Route path='/about' element={<About />}/>
     </Routes>
 
       

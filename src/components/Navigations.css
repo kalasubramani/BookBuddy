@@ -1,0 +1,20 @@
+.navBar{
+  display: flex;
+  justify-content: space-around;
+  font-size: large;
+   border-radius: 10px;
+  /* margin:15px 237px; */
+  margin-bottom: 2em;
+  border: 5px solid rgb(196, 152, 95);
+  /* background-color:rgba(135,206,250,0.5); */
+  background-color: rgba(95,158,160,0.5);
+  /* background-color: rgb(196, 152, 95); */
+}
+.highlight{
+  border: 2px dashed brown;
+  border-radius:10px;
+  padding: 10px;
+}
+.normal{
+  padding: 10px;
+}

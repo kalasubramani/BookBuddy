@@ -16,11 +16,11 @@ const Login = ({setToken}) => {
             email,
             password
         }
-        try {            
+        try {                     
             const {data} = await axios.post('https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/login', user)
             // const response = await axios.post('https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/login', user)
             window.localStorage.setItem('token', data.token);
-            // console.log("login response ",response)
+            console.log("login response ",data)
             setToken(data.token)
             navigate('/')
         } catch (error) {
