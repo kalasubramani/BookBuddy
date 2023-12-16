@@ -8,14 +8,22 @@ const SelectedBook = ({ bookList, user }) => {
 
   //set useState to update the view after api call
   const [thisBook, setThisBook] = useState();
-
+  
   //get the id from url
   const { id } = useParams();
 
   function handleCheckout() {
-    const checkedoutBook = checkoutBook(thisBook.id);
-    //update state with fresh data
-    setThisBook(checkedoutBook);
+    try {
+      const checkedoutBook = async () => {
+        const response = await checkoutBook(thisBook.id);
+        
+        //update state with fresh data
+        setThisBook(response);
+      };
+      checkedoutBook();
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   //re-render the page everytime bookList is updated (during page refresh)

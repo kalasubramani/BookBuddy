@@ -38,7 +38,7 @@ export const checkoutBook = async (bookId) => {
         },
       }
     );
-
+  
     //update state with fresh data
     return response.data.book;
   } catch (error) {

@@ -2,15 +2,32 @@
   display: flex;
   justify-content: space-around;
   font-size: large;
-  margin: 10px;
+   margin: 10px;
    border-radius: 10px;
    background-color: rgba(135,206,250,0.2);
 }
 .highlight{
   border: 2px dashed brown;
   border-radius:10px;
-  padding: 10px;
+  /* padding: 10px; */
+  padding: 5px 5px 10px 10px;
 }
 .normal{
-  padding: 10px;
+  /* padding: 10px; */
+  padding: 5px 5px 10px 10px;
+}
+.navImg{
+  display: inline;
+  font-size:xx-large;
+  border-radius: 10px;
+}
+.navImgLogout{
+  display:flex;
+  font-size:large;
+  padding: 23px 5px 0px 10px;
+}
+.navImgX{
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 1em;
 }

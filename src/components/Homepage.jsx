@@ -7,7 +7,7 @@ const Homepage = ({user}) => {
     <div className="homePageDiv">
       {user?.firstname? <h2>Welcome back, {user.firstname} !</h2> : <h2>Welcome to our library!</h2> } 
       <div className="event">
-        <h3> Events</h3>
+        <h3 className="eventsHeading"> Events</h3>
         <section>
           <img
             className="eventImage"

@@ -32,7 +32,7 @@ const About = () => {
       </p>
 
       <p>
-        <strong>Book~Worm Café </strong> Refresh as you READ ! Book~Worm Café at
+        <strong>Book~Worm Café </strong><span className="bookworm">📖🐛</span> Refresh as you READ ! <span className="cofffee"> &#9749;</span> Book~Worm Café at
         the Library brings a taste of booktown's favorite Parisian-style bistro
         and bakery to downtown!
       </p>

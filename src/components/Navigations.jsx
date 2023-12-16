@@ -21,7 +21,7 @@ const Navigations = ({ user, setUser, setToken }) => {
         to="/books"
         className={pathname === "/books" ? "highlight" : "normal"}
       >
-        Books
+        Books <span className="navImg">&#128218;</span>
       </Link>
       {user.email ? (
         <>
@@ -29,10 +29,10 @@ const Navigations = ({ user, setUser, setToken }) => {
             to="/account"
             className={pathname === "/account" ? "highlight" : "normal"}
           >
-            User
+            User <span className="navImg">🙋</span>
           </Link>
-          <Link to="/" className="normal" onClick={logout}>
-            Logout
+          <Link to="/" className="navImgLogout" onClick={logout}>
+            Logout<span className="navImgX">&#10060;</span>
           </Link>
         </>
       ) : (
@@ -41,14 +41,14 @@ const Navigations = ({ user, setUser, setToken }) => {
             to="/login"
             className={pathname === "/login" ? "highlight" : "normal"}
           >
-            Login
+            Login <span className="navImg"> ⚿ </span>
           </Link>
 
           <Link
             to="/register"
             className={pathname === "/register" ? "highlight" : "normal"}
           >
-            Register
+            Register  <span className="navImg">✍ </span>
           </Link>
         </>
       )}
@@ -56,7 +56,7 @@ const Navigations = ({ user, setUser, setToken }) => {
         to="/About"
         className={pathname === "/About" ? "highlight" : "normal"}
       >
-        About
+        About<span className="navImg"> �</span>
       </Link>
     </nav>
   );

@@ -10,9 +10,10 @@
 }
 .eventImage {
   height: 200px;
-  float: inline-end;
-  margin: 10px;
+  /* float: inline-end; */
+  float: left;
+  margin: 50px;
 }
-h3{
+.eventsHeading{
   text-decoration: underline;
 }
