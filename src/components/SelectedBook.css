@@ -29,3 +29,8 @@
 .backtoallbooks {
   font-weight: bold;
 }
+.checkoutMessage{
+  font-weight: bold;
+  padding-left: 20px;
+  color:green;
+}

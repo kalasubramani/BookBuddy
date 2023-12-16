@@ -5,6 +5,7 @@
   padding:0px;
   border: none;
   border-bottom-style: solid;
+  background-color: transparent;
 }
 input:focus{
   outline: none;
