@@ -1,0 +1,18 @@
+.searchBox{
+  width:30em;
+  height: 1em;
+  font-size: large;
+  padding:0px;
+  border: none;
+  border-bottom-style: solid;
+}
+input:focus{
+  outline: none;
+}
+.search{
+  font-size: larger;
+}
+.searchbar{
+  margin: 0px 0px 1em 8em;
+  float: left;
+}

@@ -2,13 +2,9 @@
   display: flex;
   justify-content: space-around;
   font-size: large;
+  margin: 10px;
    border-radius: 10px;
-  /* margin:15px 237px; */
-  margin-bottom: 2em;
-  border: 5px solid rgb(196, 152, 95);
-  /* background-color:rgba(135,206,250,0.5); */
-  background-color: rgba(95,158,160,0.5);
-  /* background-color: rgb(196, 152, 95); */
+   background-color: rgba(135,206,250,0.2);
 }
 .highlight{
   border: 2px dashed brown;

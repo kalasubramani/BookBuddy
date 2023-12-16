@@ -1,3 +1,18 @@
-.homePageDiv{
-  background-color: lightgreen;
+.homePageDiv {
+  margin: 1em;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 3px;
+  background-color: rgba(135, 206, 250, 0.2);
+}
+.event {
+  height: 15em;
+}
+.eventImage {
+  height: 200px;
+  float: inline-end;
+  margin: 10px;
+}
+h3{
+  text-decoration: underline;
 }

@@ -1,0 +1,22 @@
+.registerform{
+  display: flex;
+  flex-direction: column;
+  width:fit-content;
+  margin: 2em auto;
+ row-gap: 20px;
+ align-items: flex-end;
+}
+.registerButton{
+  width: 80px;
+  padding: 10px;
+  border-radius: 10px;
+  margin: auto;
+}
+.successfulRegistration{
+  margin: auto;
+  width: 40%;
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 10px;
+  background-color: rgba(135,206,250,0.2);
+}

@@ -1,29 +1,36 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./Books.css";
-import { Link } from "react-router-dom";
-import SearchABook from './SearchABook'
+import {useNavigate } from "react-router-dom";
+import SearchABook from "./SearchABook";
 
-const Books = ({bookList}) => {
+const Books = ({ bookList }) => {
+  const navigate = useNavigate();
+  //to refresh view when books are filtered through search - useState must be undefined to get bookData
+  const [filteredBooks, setFilteredBooks] = useState();
 
-  //to refresh view when books are filtered through search 
-  const [filteredBooks, setFilteredBooks]=useState();//***** usestate ([])
-  
-  console.log("filteredBooks in Booklist : ",filteredBooks)
-
-  const bookData = (filteredBooks??bookList).map((book)=>{
-     return <li key={book.id}> <Link to={`/books/${book.id}`}> {book.title}</Link></li>
-  })
-
+  //form jsx to display books
+  const bookData = (filteredBooks ?? bookList)?.map((book) => {
+    return (
+      <div
+        key={book.id}
+        className="booklist"
+        onClick={() => {
+          navigate(`/books/${book.id}`);
+        }}
+      >
+        <img src={book.coverimage} className="coverimage" />
+      </div>
+    );
+  });
+ 
   return (
-    <div className="booksPageDiv">
-      <h1>Books</h1>
+    <>
       {/* search a book  */}
-      <SearchABook bookList={bookList} setFilteredBooks={setFilteredBooks}/>
-      <h3>We should see our books here!</h3>
-      <ul>
-        {bookData}
-      </ul>
-    </div>
+      <SearchABook bookList={bookList} setFilteredBooks={setFilteredBooks} />
+
+      <div className="bookListDiv">{bookData}</div>
+      {bookData?.length > 0 ? "" : "No Books to display."}
+    </>
   );
 };
 

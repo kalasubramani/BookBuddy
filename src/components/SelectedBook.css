@@ -1,11 +1,16 @@
-.selectedBookDiv{
-  width:50%;
-  height:25em;
-  margin:auto;
-  overflow-y: auto;
-  background-color: lightseagreen;
+.selectedBookDiv {
+  width: 50%;
+  height: 25em;
+  margin: auto;
+  margin-top: 1em;
+  padding: 1em;
+  line-height: 1.5em;
+  font-style: italic;
+  border-radius: 10px;
+  box-shadow: 3px;
+  background-color: rgba(135, 206, 250, 0.2);
 }
-.bold{
+.bold {
   font-weight: bold;
 }
 .coverImage {
@@ -14,10 +19,13 @@
   float: inline-end;
   margin: 10px;
 }
-.bookDetails{
-  border: 1px solid red;
-  height:18em;
+.bookDetails {
+  height: 15em;
 }
-.checkout{
-  width:fit-content;
+.checkout {
+  width: fit-content;
+  margin: 1em;
+}
+.backtoallbooks {
+  font-weight: bold;
 }

@@ -1,0 +1,14 @@
+.loginform{
+  display: flex;
+  flex-direction: column;
+  width:fit-content;
+  margin: 2em auto;
+ row-gap: 20px;
+ align-items: flex-end;
+}
+.loginButton{
+  width: 80px;
+  padding: 10px;
+  border-radius: 10px;
+  margin: auto;
+}
