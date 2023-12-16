@@ -2,10 +2,10 @@ import "./Homepage.css";
 import eventImage from "../assets/indigenous.jpg";
 import { Link } from "react-router-dom";
 
-const Homepage = () => {
+const Homepage = ({user}) => {
   return (
     <div className="homePageDiv">
-      <h2>Welcome to our library!</h2>
+      {user?.firstname? <h2>Welcome back, {user.firstname} !</h2> : <h2>Welcome to our library!</h2> } 
       <div className="event">
         <h3> Events</h3>
         <section>

@@ -59,7 +59,7 @@ function App() {
       </h1>
       <Navigations user={user} setUser={setUser} setToken={setToken} />
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<Homepage user={user} />} />
         <Route path="/successReg" element={<SuccessRegi />} />
         <Route path="/books" element={<Books bookList={bookList} />} />
         <Route
