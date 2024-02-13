@@ -29,17 +29,14 @@ const Homepage = ({user}) => {
           </ul>
         </section>
       </div>
+      <section className="infoSection">
       <p>
         <strong>Prepare for Your Visit</strong> Get a Library card! If you are
         not a member yet, begin the registration process online at our{" "}
         <Link to="/register">Registration</Link>
         &nbsp;page.
       </p>
-      <p>
-        Search the Library's catalog and digital holdings to identify materials
-        you would like to see when you visit.
-      </p>
-
+      
       <p>
         <strong>Archives Research Room </strong>Open 9:00 AM to 1:00 PM and 2:00
         to 4:30 PM, Tuesday through Friday.
@@ -48,6 +45,7 @@ const Homepage = ({user}) => {
         <strong>Special Collections</strong> Open Tuesday through Friday by
         appointment.
       </p>
+      </section>
     </div>
   );
 };

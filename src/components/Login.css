@@ -5,10 +5,11 @@
   margin: 2em auto;
  row-gap: 20px;
  align-items: flex-end;
+ height: 65vh;
 }
 .loginButton{
   width: 80px;
   padding: 10px;
   border-radius: 10px;
-  margin: auto;
+  margin-right: 60px;
 }

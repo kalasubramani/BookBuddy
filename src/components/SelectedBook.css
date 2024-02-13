@@ -1,14 +1,16 @@
 .selectedBookDiv {
   width: 50%;
-  height: 25em;
+  /* height: 25em; */
   margin: auto;
   margin-top: 1em;
+  margin-bottom: 1em;
   padding: 1em;
   line-height: 1.5em;
   font-style: italic;
   border-radius: 10px;
   box-shadow: 3px;
   background-color: rgba(135, 206, 250, 0.2);
+  height: 65vh;
 }
 .bold {
   font-weight: bold;
@@ -20,7 +22,7 @@
   margin: 10px;
 }
 .bookDetails {
-  height: 18em;
+  height: 28em;
 }
 .checkout {
   width: fit-content;
