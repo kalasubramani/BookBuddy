@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   margin: 1em;
   padding: 1em;
+  height: 65vh;
 }
 
 .book {
@@ -11,7 +12,7 @@
   flex-direction: column;
   gap: 0.5em;
   text-align: center;
-  font-size: medium;
+  font-size: medium; 
   text-align: center;
   border-radius: 20px;
 }

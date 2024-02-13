@@ -15,7 +15,7 @@
   margin: auto;
   padding: 2em;
   border-radius: 10px;
-  max-height: 45vh;
+  /* max-height: 45vh; */
 }
 .coverimage {
   height: 12em;

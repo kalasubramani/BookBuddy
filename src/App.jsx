@@ -13,6 +13,7 @@ import SelectedBook from "./components/SelectedBook";
 import "./App.css";
 import About from "./components/About";
 import { fetchBookList } from "./API";
+import Footer from "./components/Footer";
 
 function App() {
   const [token, setToken] = useState(null);
@@ -53,10 +54,10 @@ function App() {
 
   return (
     <>
-      <h1>
+      {/* <h1>
         <img id="logo-image" src={bookLogo} />
         <Link to="/">Book Buddy</Link>
-      </h1>
+      </h1> */}
       <Navigations user={user} setUser={setUser} setToken={setToken} />
       <Routes>
         <Route path="/" element={<Homepage user={user} />} />
@@ -74,6 +75,7 @@ function App() {
         <Route path="/account" element={<Account user={user} />} />
         <Route path="/about" element={<About />} />
       </Routes>
+      <Footer/>
     </>
   );
 }
