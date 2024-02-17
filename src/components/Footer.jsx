@@ -7,7 +7,7 @@ import PinterestIcon from '@mui/icons-material/Pinterest';
 const Footer = ()=>{
 
 return(
-   <Box component={'footer'} sx={{backgroundColor:'rgba(135,206,250,0.2)', p:'2rem',borderRadius:'10px',m:'10px'}} >
+   <Box component={'footer'} position="sticky" sx={{display: 'flex',backgroundColor:'rgba(135,206,250,0.2)', p:'2rem',borderRadius:'10px'}} >
       <Container sx={{ flexGrow: 1, textAlign: 'center' }} maxWidth="sm">
         <Typography variant="body1">
           Visit us at: 1148 W. Main Ave, Richmond, VA 23060

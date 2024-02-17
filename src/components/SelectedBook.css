@@ -10,7 +10,7 @@
   border-radius: 10px;
   box-shadow: 3px;
   background-color: rgba(135, 206, 250, 0.2);
-  height: 65vh;
+  /* height: 65vh; */
 }
 .bold {
   font-weight: bold;

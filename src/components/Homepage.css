@@ -4,20 +4,16 @@
   border-radius: 10px;
   box-shadow: 3px;
   background-color: rgba(135, 206, 250, 0.2);
-  height: 65vh;
+  /* height: 55vh; */
 }
 .event {
-  height: 20em;
+  height: 15em;
 }
 .eventImage {
   height: 200px;
   float: left;
-  margin: 50px;
+  margin-right: 30px;
 }
 .eventsHeading{
   text-decoration: underline;
-}
-.infoSection{
-  margin-top: 120px;
-  margin-left: 10px;
 }
