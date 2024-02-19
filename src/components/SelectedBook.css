@@ -1,16 +1,13 @@
 .selectedBookDiv {
-  width: 50%;
-  /* height: 25em; */
   margin: auto;
   margin-top: 1em;
   margin-bottom: 1em;
-  padding: 1em;
+  padding: 5em;
   line-height: 1.5em;
   font-style: italic;
   border-radius: 10px;
   box-shadow: 3px;
-  background-color: rgba(135, 206, 250, 0.2);
-  /* height: 65vh; */
+  color: #f7f3e6;
 }
 .bold {
   font-weight: bold;
@@ -21,9 +18,6 @@
   float: inline-end;
   margin: 10px;
 }
-.bookDetails {
-  height: 28em;
-}
 .checkout {
   width: fit-content;
   margin: 1em;
@@ -31,8 +25,8 @@
 .backtoallbooks {
   font-weight: bold;
 }
-.checkoutMessage{
+.checkoutMessage {
   font-weight: bold;
   padding-left: 20px;
-  color:green;
+  color: #f7f3e6;
 }

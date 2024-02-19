@@ -5,7 +5,7 @@
   margin: 2em auto;
   row-gap: 20px;
   align-items: flex-end;
-  /* height: 65vh; */
+  color: #f7f3e6;
 }
 .registerButton {
   width: 80px;

@@ -1,19 +1,18 @@
-.homePageDiv {
-  margin: 1em;
-  padding: 1em;
+.eventPageDiv {
   border-radius: 10px;
   box-shadow: 3px;
-  background-color: rgba(135, 206, 250, 0.2);
-  /* height: 55vh; */
+  color: #f7f3e6;
 }
 .event {
   height: 15em;
+  color: #f7f3e6;
 }
 .eventImage {
   height: 200px;
   float: left;
   margin-right: 30px;
+  border-radius: 10px;
 }
-.eventsHeading{
+.eventsHeading {
   text-decoration: underline;
 }

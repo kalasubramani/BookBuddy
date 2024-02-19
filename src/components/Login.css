@@ -1,13 +1,13 @@
-.loginform{
+.loginform {
   display: flex;
   flex-direction: column;
-  width:fit-content;
+  width: fit-content;
   margin: 2em auto;
- row-gap: 20px;
- align-items: flex-end;
- /* height: 65vh; */
+  row-gap: 20px;
+  align-items: flex-end;
+  color: #f7f3e6;
 }
-.loginButton{
+.loginButton {
   width: 80px;
   padding: 10px;
   border-radius: 10px;

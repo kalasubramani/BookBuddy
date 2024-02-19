@@ -1,3 +1,23 @@
-.warning{
+.warning {
   color: orangered;
+}
+.mainDiv {
+  margin: auto;
+  min-height: 100vh;
+  vertical-align: "middle";
+  position: relative;
+  background-color: rgba(95, 158, 160, 4);
+}
+.container {
+  width: 70%;
+  height: 95%;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.logout {
+  float: right;
 }

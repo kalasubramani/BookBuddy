@@ -7,7 +7,9 @@ const About = () => {
         Book buddy is a carefully curated selection of authoritative databases,
         online learning products, and other digital contents.
       </p>
-      <span><strong>E-mail :</strong> bookbuddy@bblibrary.com </span>
+      <span>
+        <strong>E-mail :</strong> bookbuddy@bblibrary.com{" "}
+      </span>
       <p>
         Use this database to search across archival collections held by the
         library. This includes physical and digital material in our holdings. To
@@ -32,9 +34,11 @@ const About = () => {
       </p>
 
       <p>
-        <strong>Book~Worm Café </strong><span className="bookworm">📖🐛</span> Refresh as you READ ! <span className="cofffee"> &#9749;</span> Book~Worm Café at
-        the Library brings a taste of booktown's favorite Parisian-style bistro
-        and bakery to downtown!
+        <strong>Book~Worm Café </strong>
+        <span className="bookworm">📖🐛</span> Refresh as you READ !{" "}
+        <span className="cofffee"> &#9749;</span> Book~Worm Café at the Library
+        brings a taste of booktown's favorite Parisian-style bistro and bakery
+        to downtown!
       </p>
     </div>
   );

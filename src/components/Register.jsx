@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Register.css";
+import { Typography } from "@mui/material";
 
 const Register = () => {
   const [firstname, setFname] = useState("");
@@ -35,12 +36,15 @@ const Register = () => {
   return (
     <div>
       <form onSubmit={handleSubmit} className="registerform">
+        <Typography variant="body">
+          Create Your Account: Unlock a World of Possibilities!
+        </Typography>
         <label>
           First name:&nbsp;
           <input
             type="text"
             value={firstname}
-            maxLength={12}
+            maxLength={50}
             minLength={3}
             onChange={(e) => {
               setFname(e.target.value);
@@ -53,8 +57,8 @@ const Register = () => {
           <input
             type="text"
             value={lastname}
-            maxLength={12}
-            minLength={3}
+            maxLength={50}
+            minLength={1}
             onChange={(e) => {
               setLname(e.target.value);
             }}
@@ -66,7 +70,7 @@ const Register = () => {
           <input
             type="email"
             value={email}
-            maxLength={12}
+            maxLength={50}
             minLength={6}
             onChange={(e) => {
               setEmail(e.target.value);

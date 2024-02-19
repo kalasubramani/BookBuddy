@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
+import { Typography } from "@mui/material";
 
 const Login = ({ setToken }) => {
   const [email, setEmail] = useState("");
@@ -36,6 +37,9 @@ const Login = ({ setToken }) => {
   return (
     <div>
       <form onSubmit={handleSubmit} className="loginform">
+        <Typography>
+          Login to Book Buddy using your registered email.
+        </Typography>
         <label>
           Email:&nbsp;
           <input

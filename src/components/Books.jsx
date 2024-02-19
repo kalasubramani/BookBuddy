@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Books.css";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import SearchABook from "./SearchABook";
 
 const Books = ({ bookList }) => {
@@ -22,12 +22,9 @@ const Books = ({ bookList }) => {
       </div>
     );
   });
- 
+
   return (
     <>
-      {/* search a book  */}
-      <SearchABook bookList={bookList} setFilteredBooks={setFilteredBooks} />
-
       <div className="bookListDiv">{bookData}</div>
       {bookData?.length > 0 ? "" : "No Books to display."}
     </>
