@@ -2,23 +2,28 @@ import { useEffect, useState } from "react";
 import "./Account.css";
 import { deleteReservation } from "../API";
 import { fetchAllCheckedoutBooks } from "../API";
+import Login from "./Login";
+import { Snackbar } from "@mui/material";
 
-const Account = ({ user }) => {
+const Account = ({ user, setToken }) => {
   const [reservedBooks, setReservedBooks] = useState([]);
+  const [showMessage, setShowMessage] = useState(false);
 
   //get checkedout books for the user
   useEffect(() => {
-    try {
-      const getAllCheckedoutBooks = async () => {
-        const response = await fetchAllCheckedoutBooks();
+    if (user.email) {
+      try {
+        const getAllCheckedoutBooks = async () => {
+          const response = await fetchAllCheckedoutBooks();
 
-        setReservedBooks(response);
-      };
-      getAllCheckedoutBooks();
-    } catch (error) {
-      console.log(error);
+          setReservedBooks(response);
+        };
+        getAllCheckedoutBooks();
+      } catch (error) {
+        console.log(error);
+      }
     }
-  }, []);
+  }, [user]);
 
   //forms jsx element for each book
   const checkedoutBooks = reservedBooks.map((book) => {
@@ -39,6 +44,7 @@ const Account = ({ user }) => {
       const response = deleteReservation(returnedBookId);
       //update booklist after api call
       updateReservedBooks(returnedBookId);
+      setShowMessage(true);
     } catch (error) {
       console.log(error);
     }
@@ -54,16 +60,24 @@ const Account = ({ user }) => {
     setReservedBooks(updatedBookList);
   }
 
-  return (
+  const renderReservedBooks = () => (
     <div className="reservedBookDiv">
       <h2>Email: {user.email}</h2>
       <hr />
+      <Snackbar
+        open={showMessage}
+        autoHideDuration={6000}
+        onClose={() => {
+          setShowMessage(false);
+        }}
+        message="Return Accepted! Kindly place the book in the receptacle provided for returns."
+      />
 
       {/* display books reserved by user */}
       {reservedBooks.length > 0 ? (
         <>
           <h4>You have checked out the following books...</h4>
-          <div className="bookListDiv">{checkedoutBooks}</div>
+          <div className="checkoutbooksDiv">{checkedoutBooks}</div>
         </>
       ) : (
         <p>
@@ -73,6 +87,10 @@ const Account = ({ user }) => {
       )}
     </div>
   );
+  const renderLogin = () => <Login setToken={setToken} />;
+
+  console.log("user", user);
+  return user.email ? renderReservedBooks() : renderLogin();
 };
 
 export default Account;

@@ -1,0 +1,18 @@
+.eventPageDiv {
+  border-radius: 10px;
+  box-shadow: 3px;
+  color: #f7f3e6;
+}
+.event {
+  height: 15em;
+  color: #f7f3e6;
+}
+.eventImage {
+  height: 200px;
+  float: left;
+  margin-right: 30px;
+  border-radius: 10px;
+}
+.eventsHeading {
+  text-decoration: underline;
+}

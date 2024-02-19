@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import bookLogo from "./assets/books.png";
-import { Routes, Route, Link } from "react-router-dom";
-import Navigations from "./components/Navigations";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Books from "./components/Books";
 import Login from "./components/Login";
 import Register from "./components/Register";
@@ -13,12 +11,15 @@ import SelectedBook from "./components/SelectedBook";
 import "./App.css";
 import About from "./components/About";
 import { fetchBookList } from "./API";
-import Footer from "./components/Footer";
+import Events from "./components/Events";
+import SearchABook from "./components/SearchABook";
+import Volunteer from "./components/Volunteer";
 
 function App() {
   const [token, setToken] = useState(null);
   const [user, setUser] = useState({});
   const [bookList, setBookList] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const attemptLogin = async () => {
@@ -34,7 +35,7 @@ function App() {
             },
           }
         );
-        
+
         setUser(response.data);
       } else {
         throw "no token";
@@ -52,31 +53,63 @@ function App() {
     getBookData();
   }, [token]);
 
+  //clear out token,userdata and navigate to home
+  const logout = () => {
+    if (user.firstname) {
+      window.localStorage.removeItem("token");
+      setToken(null);
+      setUser({});
+      navigate("/");
+    }
+  };
+
   return (
-    <>
-      {/* <h1>
-        <img id="logo-image" src={bookLogo} />
-        <Link to="/">Book Buddy</Link>
-      </h1> */}
-      <Navigations user={user} setUser={setUser} setToken={setToken} />
-      <Routes>
-        <Route path="/" element={<Homepage user={user} />} />
-        <Route path="/successReg" element={<SuccessRegi />} />
-        <Route path="/books" element={<Books bookList={bookList} />} />
-        <Route
-          path="/books/:id"
-          element={<SelectedBook bookList={bookList} user={user} />}
-        />
-        <Route
-          path="/login"
-          element={<Login setUser={setUser} setToken={setToken} />}
-        />
-        <Route path="/register" element={<Register />} />
-        <Route path="/account" element={<Account user={user} />} />
-        <Route path="/about" element={<About />} />
-      </Routes>
-      <Footer/>
-    </>
+    <div className="mainDiv">
+      <div className="container">
+        {user?.firstname ? (
+          <h4>Welcome back, {user.firstname} !</h4>
+        ) : (
+          <h4>Welcome to our library!</h4>
+        )}
+        <button
+          onClick={() => {
+            navigate("/");
+          }}
+          style={{ marginBottom: "0.5em" }}
+        >
+          Home
+        </button>
+        {user?.email && (
+          <button className="logout" onClick={logout}>
+            Logout
+          </button>
+        )}
+
+        <Routes>
+          <Route path="/" element={<Homepage user={user} />} />
+          <Route path="/successReg" element={<SuccessRegi />} />
+          <Route path="/books" element={<Books bookList={bookList} />} />
+          <Route
+            path="/books/:id"
+            element={<SelectedBook bookList={bookList} user={user} />}
+          />
+          <Route
+            path="/login"
+            element={<Login setUser={setUser} setToken={setToken} />}
+          />
+          <Route path="/register" element={<Register />} />
+          <Route
+            path="/account"
+            element={<Account user={user} setToken={setToken} />}
+          />
+          <Route path="/about" element={<About />} />
+          <Route path="/events" element={<Events user={user} />} />
+          <Route path="/search" element={<SearchABook bookList={bookList} />} />
+          <Route path="/volunteer" element={<Volunteer />} />
+        </Routes>
+      </div>
+      {/* <Footer/> */}
+    </div>
   );
 }
 

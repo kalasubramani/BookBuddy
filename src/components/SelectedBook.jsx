@@ -5,11 +5,11 @@ import { checkoutBook } from "../API";
 
 const SelectedBook = ({ bookList, user }) => {
   const hasLoggedin = !!user?.email;
-  const [response,setResponse]=useState();
-  
+  const [response, setResponse] = useState();
+
   //set useState to update the view after api call
   const [thisBook, setThisBook] = useState();
-  
+
   //get the id from url
   const { id } = useParams();
 
@@ -17,7 +17,7 @@ const SelectedBook = ({ bookList, user }) => {
     try {
       const checkedoutBook = async () => {
         const apiresponse = await checkoutBook(thisBook.id);
-        
+
         setResponse(apiresponse);
         //update state with fresh data
         setThisBook(apiresponse);
@@ -39,7 +39,14 @@ const SelectedBook = ({ bookList, user }) => {
 
   return (
     <div className="selectedBookDiv">
-      {response?<p className="checkoutMessage">This book is checkout in your name.</p>:""}
+      {response ? (
+        <p className="checkoutMessage">
+          This book is checked out in your name. You can pickup the book from
+          checkout window.
+        </p>
+      ) : (
+        ""
+      )}
       {user.email ? (
         ""
       ) : (
